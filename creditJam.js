@@ -106,7 +106,7 @@ const jsonData  = [
 function calculateScores(cards, preferences) {
     return cards.map(card => {
       let score = 0;
-      if (preferences.spendingCategory.includes(card.Category)) score += 5;
+      if (preferences.topCategories.includes(card.Category)) score += 5;
       //fix balance transfer
       if (preferences.balance === "Yes") score += 10;
       return { ...card, score };
